@@ -1,0 +1,23 @@
+package com.gla.methods;
+
+class OTPGenerator {
+
+    public static int gen() {
+        return (int)(Math.random() * 900000) + 100000;
+    }
+
+    public static boolean unique(int[] a) {
+        for (int i = 0; i < a.length; i++)
+            for (int j = i + 1; j < a.length; j++)
+                if (a[i] == a[j]) return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        for (int i = 0; i < 10; i++)
+            a[i] = gen();
+        System.out.println(unique(a));
+    }
+}
+
